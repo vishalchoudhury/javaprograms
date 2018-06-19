@@ -1,0 +1,26 @@
+import java.io.*;
+
+abstract class dbase { 
+    abstract void connect(String dbname) {
+	System.out.println(dbname+" is connected");
+    }
+    abstract void disconnect() {
+	System.outprintln(dbname+" is disconnected");
+    }
+}
+
+class Mysql extends dbase {
+    protected String name;
+    Mysql(String db) {
+	name = db;
+    }
+}
+
+class Finish {
+    public static void main(String args[]) {
+	 String name = args[0];
+         Mysql ob = new Mysql(name);
+	 ob.connect();
+	 ob.disconnect();
+    }
+}
